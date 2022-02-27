@@ -1,0 +1,36 @@
+{
+  "name": "movies-explorer-api",
+  "version": "1.0.0",
+  "description": "backend",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "lint": "npx eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Borisjaou/movies-explorer-api.git"
+  },
+  "author": "Boris Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Borisjaou/movies-explorer-api/issues"
+  },
+  "homepage": "https://github.com/Borisjaou/movies-explorer-api#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-winston": "^4.2.0",
+    "mongoose": "^6.2.3",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.10.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "nodemon": "^2.0.15"
+  }
+}
