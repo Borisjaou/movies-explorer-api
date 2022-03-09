@@ -1,15 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { errors } = require('celebrate');
 const mongoose = require('mongoose');
-require('dotenv').config();
+const { errors } = require('celebrate');
 const cors = require('cors');
+require('dotenv').config();
 
 const cookieParser = require('cookie-parser');
 const { celebrate, Joi } = require('celebrate');
 const errorHandler = require('./middlewares/error-handler');
 
 const { DB_ADDRESS = 'mongodb://localhost:27017/mestodb', PORT = 3000 } = process.env;
+
 const {
   createUser,
   login,
