@@ -18,7 +18,6 @@ const {
 } = require('./controllers/users');
 
 const routes = require('./routes');
-
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const app = express();
