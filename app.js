@@ -17,7 +17,7 @@ const {
   logout,
 } = require('./controllers/users');
 
-const routes = require('./controllers/users');
+const routes = require('./routes');
 
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
