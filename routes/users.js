@@ -4,7 +4,7 @@ const { celebrate, Joi } = require('celebrate');
 const {
   getUser,
   updateUser,
-} = require('../controllers/movies');
+} = require('../controllers/users');
 
 router.get('/users/me', getUser); // возвращает инфо о пользователе (почта и имя)
 router.patch('/users/me', celebrate({
