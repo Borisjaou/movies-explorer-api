@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
   const token = req.cookies.jwt;
   let payload;
   try {
-    payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : 'very-secret-key');
+    payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : 'not-secret-key');
   } catch (err) {
     next(new Unauthorized('Необходимо авторизоваться'));
   }

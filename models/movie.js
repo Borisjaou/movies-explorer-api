@@ -42,7 +42,8 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   movieId: {
-    // айди фильма который содержится в ответе сервиса MoviesExplorer
+    type: Number,
+    required: true,
   },
   nameRU: {
     type: String,
