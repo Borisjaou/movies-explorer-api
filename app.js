@@ -10,7 +10,6 @@ const { celebrate, Joi } = require('celebrate');
 const errorHandler = require('./middlewares/error-handler');
 
 const { DB_ADDRESS = 'mongodb://localhost:27017/mestodb', PORT = 3000 } = process.env;
-
 const {
   createUser,
   login,
