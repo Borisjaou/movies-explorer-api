@@ -60,7 +60,7 @@ const deleteMovie = (req, res, next) => Movie.findById(req.params.movieId)
   })
   .catch((err) => {
     if (err.name === 'CastError') {
-      next(new BadRequest(`${Object.values(err.errors).map((error) => error.message).join(', ')}`));
+      next(new BadRequest({ message: 'Ошибка Id' }));
     } else {
       next(err);
     }
