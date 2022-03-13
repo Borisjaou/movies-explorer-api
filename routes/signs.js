@@ -7,19 +7,19 @@ const {
   createUser,
 } = require('../controllers/users');
 
-router.post('/sign-up', celebrate({
+router.post('/signup', celebrate({
   body: Joi.object().keys({
-    name: Joi.string().min(2).max(30),
+    name: Joi.string().required().min(2).max(30),
     password: Joi.string().required().min(8),
     email: Joi.string().required().email(),
   }),
 }), createUser);
-router.post('/sign-in', celebrate({
+router.post('/signin', celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email(),
     password: Joi.string().required().min(8),
   }),
 }), login);
-router.get('/sign-out', logout);
+router.get('/signout', logout);
 
 module.exports = router;

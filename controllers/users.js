@@ -59,15 +59,11 @@ const updateUser = (req, res, next) => User
     runValidators: true,
   })
   .then((user) => {
-    if (!user) {
-      throw new ConflictError('Проверьте введенные данные');
-    } else {
-      res.status(200).send(user);
-    }
+    res.status(200).send(user);
   })
   .catch((err) => {
-    if (err.name === 'ValidationError') {
-      next(new BadRequest(`${Object.values(err.errors).map((error) => error.message).join(', ')}`));
+    if (err.name === 'MongoServerError' && err.code === 11000) {
+      next(new ConflictError('Пользователь с таким email уже существует'));
     } else {
       next(err);
     }
@@ -78,7 +74,7 @@ const login = (req, res, next) => {
   const { email, password } = req.body;
   return User.findUserByCreditails(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'some-secret-key');
+      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'not-secret-key');
       res.cookie('jwt', token, {
         maxAge: 3600000 * 24 * 7,
         httpOnly: true,

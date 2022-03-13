@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(requestLogger);
 app.use(cors({
-  origin: 'myHttpFrontAdress',
+  origin: 'https://your-movie-explorer.nomoredomains.work',
   credentials: true,
 }));
 
