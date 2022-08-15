@@ -13,6 +13,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const allowedCors = [
   'https://your-movie-explorer-fr.nomoredomains.work', 'https://api.nomoreparties.co/beatfilm-movies',
+  'https://your-movie-explorer.nomoredomains.work',
 ];
 
 const app = express();
