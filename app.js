@@ -19,8 +19,7 @@ const allowedCors = [
 ];
 
 const corsOptions = {
-  function(origin, callback) {
-    console.log(origin);
+  origin: (origin, callback) => {
     if (allowedCors.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
@@ -38,10 +37,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(requestLogger);
-app.use(cors({
-  origin: corsOptions,
-  credentials: true,
-}));
+app.use(cors(corsOptions));
 
 app.use(routes);
 app.use(errorLogger);
