@@ -11,6 +11,10 @@ const { DB_ADDRESS = 'mongodb://localhost:27017/mestodb', PORT = 3000 } = proces
 const routes = require('./routes');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
+const allowedCors = [
+  'https://your-movie-explorer-fr.nomoredomains.work', 'https://api.nomoreparties.co/beatfilm-movies',
+];
+
 const app = express();
 mongoose.connect(DB_ADDRESS, {
   useNewUrlParser: true,
@@ -21,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(requestLogger);
 app.use(cors({
-  origin: ['https://your-movie-explorer-fr.nomoredomains.work', 'https://api.nomoreparties.co/beatfilm-movies'],
+  origin: allowedCors,
   credentials: true,
 }));
 
