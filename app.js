@@ -14,7 +14,15 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const allowedCors = [
   'https://your-movie-explorer-fr.nomoredomains.work', 'https://api.nomoreparties.co/beatfilm-movies',
   'https://your-movie-explorer.nomoredomains.work',
+  'localhost:3000',
 ];
+function corsOptions(req, res, next) {
+  const { origin } = req.headers;
+  if (allowedCors.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
+  }
+  next();
+}
 
 const app = express();
 mongoose.connect(DB_ADDRESS, {
@@ -26,7 +34,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(requestLogger);
 app.use(cors({
-  origin: allowedCors,
+  origin: corsOptions,
   credentials: true,
 }));
 
