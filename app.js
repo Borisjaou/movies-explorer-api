@@ -12,13 +12,15 @@ const routes = require('./routes');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const allowedCors = [
-  'https://your-movie-explorer-fr.nomoredomains.work', 'https://api.nomoreparties.co/beatfilm-movies',
+  'https://your-movie-explorer-fr.nomoredomains.work',
+  'https://api.nomoreparties.co/beatfilm-movies',
   'https://your-movie-explorer.nomoredomains.work',
   'localhost:3000',
 ];
 
 const corsOptions = {
-  origin: (origin, callback) => {
+  function(origin, callback) {
+    console.log(origin);
     if (allowedCors.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
