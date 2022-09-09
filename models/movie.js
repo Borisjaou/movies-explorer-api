@@ -49,12 +49,12 @@ const userSchema = new mongoose.Schema({
   nameRU: {
     type: String,
     required: true,
-    match: [/^[?!,.а-яА-ЯёЁ0-9\s]+$/],
+    match: [/^[?'!,.A-Za-zа-яА-ЯёЁ0-9\s]+$/],
   },
   nameEN: {
     type: String,
     required: true,
-    match: [/^[?!,.A-Za-z0-9\s]+$/],
+    match: [/^[?'!,.A-Za-z0-9\s]+$/],
   },
 }, { versionKey: false });
 

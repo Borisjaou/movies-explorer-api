@@ -7,7 +7,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const errorHandler = require('./middlewares/error-handler');
 
-const { DB_ADDRESS = 'mongodb://localhost:27017/mestodb', PORT = 3000 } = process.env;
+const { DB_ADDRESS = 'mongodb://localhost:27017/moviefinderdb', PORT = 3000 } = process.env;
 const routes = require('./routes');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
@@ -16,6 +16,9 @@ const allowedCors = [
   'https://api.nomoreparties.co/beatfilm-movies',
   'https://your-movie-explorer.nomoredomains.work',
   'localhost:3000',
+  'localhost:3001',
+  'http://localhost:3001',
+  'http://localhost:3000',
 ];
 
 const corsOptions = {
