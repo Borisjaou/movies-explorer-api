@@ -15,6 +15,7 @@ const allowedCors = [
   'https://your-movie-explorer-fr.nomoredomains.work',
   'https://api.nomoreparties.co/beatfilm-movies',
   'https://your-movie-explorer.nomoredomains.work',
+  'https://api.nomoreparties.co/beatfilm-movies',
   'localhost:3000',
   /*   'localhost:3001',
     'http://localhost:3001', */
