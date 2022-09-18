@@ -18,8 +18,8 @@ router.post('/', celebrate({
     trailerLink: Joi.string().required().pattern(/(https?:\/\/)(w{3}\.)?(((\d{1,3}\.){3}\d{1,3})|((\w-?)+\.()))(:\d{2,5})?((\/.+)+)?\/?#?/),
     thumbnail: Joi.string().required().pattern(/(https?:\/\/)(w{3}\.)?(((\d{1,3}\.){3}\d{1,3})|((\w-?)+\.()))(:\d{2,5})?((\/.+)+)?\/?#?/),
     movieId: Joi.number().precision(0).required(),
-    nameRU: Joi.string().required().pattern(/^[?'&–\-_:!,.A-Za-zа-яА-ЯёЁ0-9\s]+$/),
-    nameEN: Joi.string().required().pattern(/^[?!&–\-_:',.A-Za-z0-9\s]+$/),
+    nameRU: Joi.string().required().pattern(/^[?'&–«»\-_:!,.A-Za-zа-яА-ЯёЁ0-9\s]+$/),
+    nameEN: Joi.string().required().pattern(/^[?!&–«»\-_:',.A-Za-z0-9\s]+$/),
   }),
 }), createMovie);
 router.delete('/:movieId', celebrate({
