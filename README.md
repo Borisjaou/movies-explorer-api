@@ -1,5 +1,5 @@
 ## The Movies Explorer API project 
-is a backend server built using Node.js, Express, and MongoDB. It provides the backend functionality for the Movies Explorer application, which allows users to search for and save movies.
+is a backend server built using *Node.js*, *Express*, and *MongoDB*. It provides the backend functionality for the Movies Explorer application, which allows users to search for and save movies.
 
 The project includes several endpoints that allow the client application to interact with the server, including:
 
